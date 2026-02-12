@@ -6,14 +6,15 @@ import network
 from mqtt import MQTTClient
 import dht
 import json
+import ntptime
 
 # ========================
 # CONFIGURATION CONSTANTS
 # ========================
-MQTT_TOPIC = 'stranma21/dht11'  # MQTT topic for publishing DHT11 data
-wifi_ssid = 'MQTT3IT'           # Wi-Fi SSID
-wifi_password = 'vyuka3ITmqtt'  # Wi-Fi password
-mqtt_server = b'mqtt.local'     # MQTT broker address
+MQTT_TOPIC = 'stransky/dht11'  # MQTT topic for publishing DHT11 data
+wifi_ssid = 'ABC'           # Wi-Fi SSID
+wifi_password = 'ABC'  # Wi-Fi password
+mqtt_server = b'floppa.local'     # MQTT broker address
 mqtt_username = b''             # Optional username (not used)
 mqtt_password = b''             # Optional password (not used)
 
@@ -88,6 +89,7 @@ try:
     else:
         # Connect to MQTT broker
         client = connect_mqtt()
+        ntptime.settime()
 
         # Publish data repeatedly until the stop button is pressed
         while stop_button.value():
@@ -111,3 +113,4 @@ try:
 
 except Exception as e:
     print('Error:', e)
+
