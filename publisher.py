@@ -6,6 +6,7 @@ import network
 from mqtt import MQTTClient
 import dht
 import json
+import urequests
 
 # ========================
 # CONFIGURATION CONSTANTS
