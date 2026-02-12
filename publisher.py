@@ -7,6 +7,7 @@ from mqtt import MQTTClient
 import dht
 import json
 import ntptime
+import urequests
 
 # ========================
 # CONFIGURATION CONSTANTS
